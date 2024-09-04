@@ -21,7 +21,7 @@ interface LatLng {
 }
 
 interface Weather {
-  cod?: number;
+  cod?: string;
   weather: { description: string }[];
   main: {
     temp: number;

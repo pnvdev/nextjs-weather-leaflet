@@ -16,7 +16,6 @@ export default async function Page() {
   return (
     <>
       <div className="bg-white-700 mx-auto my-5 w-[50%] h-[480px]">
-        {/* <Map posix={{lat:4.79029, lng:-75.69003}} /> */}
         <Map />
       </div>
     </>

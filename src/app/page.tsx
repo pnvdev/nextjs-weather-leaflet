@@ -16,7 +16,7 @@ export default async function Page() {
   return (
     <>
       {/* <div className="bg-white-700 mx-auto my-5 w-[50%] h-[480px]"> */}
-      <div className="">
+      <div className="absolute top-0 left-0 right-0 bottom-0 w-[100%] h-[100%] overflow-hidden">
         <Map />
       </div>
     </>

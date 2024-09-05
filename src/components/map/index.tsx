@@ -13,6 +13,7 @@ import L from "leaflet";
 import { GeoSearchControl, OpenStreetMapProvider } from "leaflet-geosearch";
 import "leaflet/dist/leaflet.css";
 import "leaflet-geosearch/dist/geosearch.css";
+import Image from "next/image";
 
 // Define the types for the state and event handlers
 interface LatLng {
@@ -124,20 +125,54 @@ export default function Map() {
       .toUTCString()
       .substring(17, 22);
 
+    const icon = `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`;
+    // const rotateClass = `font-bold inline-block transform rotate-${weather.wind.deg} ease-in-out`;
     return (
       <Marker position={selectedLocation!}>
         <Popup>
           <div>
-            <div>Tiempo: {tiempo}</div>
-            <div>Temperatura: {temperatura}°C</div>
-            <div>Sensación térmica: {termica}°C</div>
-            <div>Humedad: {humedad}%</div>
-            <div>Presión: {presion} hPa</div>
-            <div>Visibilidad: {visibility} mts</div>
-            <div>Viento: {viento} m/s</div>
-            <div>Ráfagas: {rafagas} m/s</div>
-            <div>Amanecer: {amanecer} hs</div>
-            <div>Atardecer: {atardecer} hs</div>
+            <div>
+              <Image
+                src={icon}
+                width={50}
+                height={50}
+                alt={tiempo}
+                className="m-auto "
+              />
+            </div>
+            <div className="p-1 ">
+              <span className="font-bold">Tiempo:</span> {tiempo}
+            </div>
+            <div className="p-1">
+              <span className="font-bold">Temperatura:</span> {temperatura}°C
+            </div>
+            <div className="p-1">
+              <span className="font-bold">Sensación térmica:</span> {termica}°C
+            </div>
+            <div className="p-1">
+              <span className="font-bold">Humedad:</span> {humedad}%
+            </div>
+            <div className="p-1">
+              <span className="font-bold">Presión:</span> {presion} hPa
+            </div>
+            <div className="p-1">
+              <span className="font-bold">Visibilidad:</span> {visibility} mts
+            </div>
+            <div className="p-1">
+              <span className="font-bold">Viento:</span> {viento} m/s
+            </div>
+            {/* <div className="p-1">
+              <span className={rotateClass}>▲</span>
+            </div> */}
+            <div className="p-1">
+              <span className="font-bold">Ráfagas:</span> {rafagas} m/s
+            </div>
+            <div className="p-1">
+              <span className="font-bold">Amanecer:</span> {amanecer} hs
+            </div>
+            <div className="p-1">
+              <span className="font-bold">Atardecer:</span> {atardecer} hs
+            </div>
           </div>
         </Popup>
       </Marker>

@@ -53,7 +53,10 @@ export default function Map() {
     }
   }, [map]);
 
-  const position: LatLng = { lat: 0, lng: 0 };
+  const position: LatLng = {
+    lat: -34.70559994976545,
+    lng: -58.395103881776734,
+  };
 
   const CustomGeoSearchControl = () => {
     const map = useMap();
@@ -182,7 +185,7 @@ export default function Map() {
   return (
     <MapContainer
       center={position}
-      zoom={2}
+      zoom={10}
       style={{ height: "98vh", width: "98vw", margin: "auto" }}
     >
       <TileLayer
